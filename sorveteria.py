@@ -7,27 +7,36 @@ ES_G = 21.00
 PR_P = 8.00
 PR_M = 14.00
 PR_G = 24.00
-'''
-    Classe: pedido tem como criar um classe para anotar e controlar os pedidos realizados
-    
-'''
 
 class Pedidos:
-
-
+    '''
+    Essa classe serve para armazenar os dados e tratalos de forma correta
+    '''
     def __init__(self):
+        '''
+            a 'Pedidos.__init__()' ser como estanciamentos para variaveis
+        '''
         self.codigo = ''
         self.tamanho = ''
         self.preco = 0.00
         self.precoTotal = 0.00
 
     def add_pedido(self, tamanho, codigo):
+        '''
+        :param tamanho: tamanho do sorvete
+        :param codigo: codigo do sorte
+        :return: nao a retorno
+        '''
         self.tamanho=self.verif_Tamanho(tamanho)
         self.codigo=self.verif_Codigo(codigo)
         self.calc_preco()
         self.calc_precoTotal()
 
     def calc_preco(self):
+        '''
+        :param self retorna o valor constante pregado no começo do codigo
+        :return: retorna as constantes dependendo do pedido;
+        '''
         aux = self.codigo+'_'+self.tamanho
         if(aux == 'TR_P'):
             return TR_P
@@ -86,7 +95,7 @@ class Pedidos:
         elif (codigo == 'PR' or codigo == 'pr'):
             return 'PR'
         else:
-            pass
+            print('Tamanho ou Codigo INVALIDO!!!')
 
     def verif_sabor(self):
         if(self.codigo == 'TR' or self.codigo == 'tr'):
@@ -100,6 +109,9 @@ class Pedidos:
 
 class Interface:
 
+    '''
+        Class destinada a interface, ela ira apresentar as escolha e coletar os inputs.
+    '''
     control = 'S'
     count = 0
     pedido = Pedidos()
