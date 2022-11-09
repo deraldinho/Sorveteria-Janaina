@@ -131,7 +131,8 @@ class Interface:
                 break
             self.control = input('Deseja Pedir mais alguma coisa? (S/N)')
     def home(self):
-        print('Bem vindo a Soveteria  Janaina Lessa de Paula')
+        print('Bem vindo a Soveteria  Janaina Lessa de P'
+              'aula')
         print(
             '|----------------------------------------------------Cardapio----------------------------------------------------|')
         print(
